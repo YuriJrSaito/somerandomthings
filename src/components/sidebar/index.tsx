@@ -1,12 +1,31 @@
 'use client'
-import './sidebar.scss'
-import { useState, useRef } from 'react'
+import "./sidebar.scss";
+import CameraIcon from '@mui/icons-material/Camera';
+import Menu from "./menu";
+import Dropmenu from "./dropmenu";
 
-const navItems = ["home", "settings", "backup", "mail", "cloud"];
+const Sidebar = ({ sidebar }: { sidebar: boolean }) => {
 
-export const Sidebar = () => {
+  return (
+    <>
+      <div className={`sidebar ${sidebar == true ? "" : 'close'}`}>
+        <div className="logo-details">
+          <CameraIcon className="logo-icon" />
+          <span className="logo-name">GESTORE</span>
+        </div>
 
-    return (
-        <h1>hello</h1>
-    );
+        <div className="nav">
+          <ul className="nav-links">
+            <Menu />
+            <Menu />
+            <Dropmenu sidebar={sidebar} />
+            <Dropmenu sidebar={sidebar} />
+            <Menu />
+          </ul>
+        </div>
+      </div>
+    </>
+  );
 };
+
+export default Sidebar;

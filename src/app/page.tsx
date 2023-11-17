@@ -1,9 +1,8 @@
-import styles from './page.module.css'
-import { Sidebar } from '@/components/sidebar'
-import { Navbar } from '@/components/navbar'
+import './page.scss'
+import Home from './home/page'
 
-export default function Home() {
+export default function Main() {
   return (
-    <Navbar />
+    <Home />
   )
 }

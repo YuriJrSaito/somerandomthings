@@ -1,0 +1,160 @@
+.sidebar {
+    //position: fixed;
+    //top: 0;
+    //left: 0;
+    height: 100%;
+    width: 260px;
+    //background-color: #11101d;
+    background-color: #343a40;
+    z-index: 100;
+    transition: all 0.5s ease;
+
+    .logo-details {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+        padding: 15px;
+
+        .logo-icon {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .logo-name {
+            font-size: 22px;
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            transition-delay: 0.1s;
+        }
+    }
+
+    .nav-links::-webkit-scrollbar{
+        width: 4px;
+    }
+
+    .nav-links::-webkit-scrollbar-track {
+        border: 1px solid #343a40;
+    }
+    
+    .nav-links::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .nav-links {
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        li:hover {
+            background-color: #1d1b31;
+        }
+
+        li.show {
+            background-color: #1d1b31;
+
+            .drop-menu {
+                .sub-menu {
+                    display: block;
+                }
+
+                .link-wrapper {
+                    .link-arrow {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            cursor: pointer;
+
+            .link-wrapper {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                gap: 24px;
+
+                .link-icon {
+                    font-size: 25px;
+                }
+
+                .link-arrow {
+                    color: #fff;
+                    font-size: 20px;
+                }
+
+                .link-name {
+                    font-size: 20px;
+                }
+
+                .link-name,
+                .link-icon {
+                    color: #fff;
+                }
+            }
+
+            .drop-menu {
+                .sub-menu {
+                    background-color: #1d1b31;
+                    border-radius: 8px;
+                    display: none;
+
+                    .sub-menu-link:hover {
+                        opacity: 1;
+                    }
+
+                    .sub-menu-link {
+                        color: #fff;
+                        padding: 8px 0px 8px 70px;
+                        font-size: 15px;
+                        opacity: 0.6;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.nav{
+    height: 100%;
+    padding: 2px;
+}
+
+.sidebar.close {
+    width: 60px;
+
+    .logo-details {
+        padding: 14px;
+        .logo-name {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    .nav-links {
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        li {
+            .link-wrapper {
+
+                .link-name,
+                .link-arrow {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-device-width: 640px) {
+}
