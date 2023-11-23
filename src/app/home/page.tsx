@@ -1,21 +1,26 @@
 'use client'
 import "./home.scss";
 import Widget1 from "@/components/widget/widget1";
-import Pagination from "@/components/widget/pagination";
-import { useState } from 'react';
+import Table from "@/components/table";
+import { PagiableTable } from "@/components/table";
+import { userRows, userHeader } from "@/datasource/userData";
 
 const Home = () => {
 
-  const [currentPage, setCurrentPage] = useState<number>(5);
-
-  const validCurrentPage = (page: number) => {
-    if (page >= 1)
-      setCurrentPage(page)
+  const UserData: PagiableTable = {
+    limit: 3,
+    total: userRows.length,
+    initialCurrentPage: 1,
+    initialStart: 0,
+    header: userHeader,
+    contentData: userRows,
+    cellDatas: [['data.id', 'text'], ['data.username', 'text'], ['data.img', 'img'], ['data.email', 'text'], 
+    ['data.status', 'text'], ['data.age', 'text']],
   }
 
   return (
     <>
-      <Pagination currentPage={currentPage} total={200} limit={10} onPageChange={(page: number) => validCurrentPage(page)} />
+      <Table InitialTable={UserData} />
     </>
   );
 };

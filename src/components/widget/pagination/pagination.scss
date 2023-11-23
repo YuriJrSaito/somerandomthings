@@ -14,16 +14,16 @@
             float: left;
             padding: 0.5rem 0.75rem;
             margin-left: -1px;
-            color: #5cb85c;
+            color: black;
             text-decoration: none;
             background-color: #fff;
-            border: 1px solid #ddd;
+            border: 1px solid black;
             cursor: pointer;
         }
 
         .page-link:focus,
         .page-link:hover {
-            color: #3d8b3d;
+            color: #343a40;
             background-color: #eceeef;
             border-color: #ddd;
         }
@@ -35,8 +35,8 @@
         z-index: 2;
         color: #fff;
         cursor: pointer;
-        background-color: #5cb85c;
-        border-color: #5cb85c;
+        background-color: #343a40;
+        border-color: #343a40;
     }
 
     .page-item:first-child .page-link {

@@ -9,8 +9,8 @@ const getPagesCut = ({ pagesCount, pagesCutCount, currentPage }:
 
     const ceiling = Math.ceil(pagesCutCount / 2);
     const floor = Math.floor(pagesCutCount / 2);
-    console.log("ceiling", ceiling);
-    console.log("floor", floor);
+    //console.log("ceiling", ceiling);
+    //console.log("floor", floor);
 
     if (pagesCount < pagesCutCount)
         return { start: 1, end: pagesCount + 1 };
@@ -73,6 +73,14 @@ const Pagination = ({ currentPage, total, limit, onPageChange }:
                     onPageChange={onPageChange}
                 />
             ))}
+            {
+                !pages.includes(pagesCount) &&
+                <PaginationItem
+                page="..."
+                currentPage={currentPage}
+                onPageChange={() => {}}
+            />
+            }
             <PaginationItem
                 page="Next"
                 currentPage={currentPage}
