@@ -50,12 +50,13 @@
         overflow-x: hidden;
 
         li:hover {
-            background-color: #1d1b31;
+            //background-color: #1d1b31;
+            background-color: #475059;
         }
 
         li.show {
-            background-color: #1d1b31;
-
+            //background-color: #1d1b31;
+            background-color: #475059;
             .drop-menu {
                 .sub-menu {
                     display: block;
@@ -102,7 +103,8 @@
 
             .drop-menu {
                 .sub-menu {
-                    background-color: #1d1b31;
+                    //background-color: #1d1b31;
+                    background-color: #475059;
                     border-radius: 8px;
                     display: none;
 

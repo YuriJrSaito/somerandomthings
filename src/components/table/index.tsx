@@ -5,6 +5,7 @@ import Pagination from '../widget/pagination';
 import Cell from './cell';
 
 export type PagiableTable = {
+    title: string;
     limit: number;
     total: number;
     initialCurrentPage: number;
@@ -31,6 +32,9 @@ const Table = ({ InitialTable }: { InitialTable: PagiableTable }) => {
 
     return (
         <div className='table-container'>
+            <div className='title'>
+                <p>{InitialTable.title}</p>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -45,7 +49,7 @@ const Table = ({ InitialTable }: { InitialTable: PagiableTable }) => {
                 <tbody>
                     {
                         InitialTable.contentData &&
-                        InitialTable.contentData.slice(start, end).map((data, index:number) => {
+                        InitialTable.contentData.slice(start, end).map((data, index: number) => {
                             return (
                                 <tr key={index}>
                                     {

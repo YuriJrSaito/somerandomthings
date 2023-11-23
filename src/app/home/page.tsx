@@ -8,6 +8,7 @@ import { userRows, userHeader } from "@/datasource/userData";
 const Home = () => {
 
   const UserData: PagiableTable = {
+    title: "Users",
     limit: 3,
     total: userRows.length,
     initialCurrentPage: 1,
